@@ -25,7 +25,7 @@ public class TableauCounter {
      */
     public static void main(String[] args) throws
             FileNotFoundException, IOException, InterruptedException {
-        boolean write = true;
+        boolean write = false;
         if(args.length > 0 && "-w".equals(args[0]))
             write = true;
         long total;

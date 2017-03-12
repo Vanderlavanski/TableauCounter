@@ -11,6 +11,7 @@ public class ParallelCounter implements Runnable {
     private final Tableau TABLEAU;
     private final int[][][] RULES;
     private final int N, R, T;  //Number, range, total thread count
+    @SuppressWarnings("FieldMayBeFinal")
     private long count, startTime, stopTime;
 
     /**

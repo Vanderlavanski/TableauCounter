@@ -6,7 +6,7 @@ import java.util.stream.*;
 
 /**
  * Takes in a text file describing the Young Tableau shape and its cell weights.
- * Frome here, it is flattened in to a 1D integer array and a list of rules
+ * From here, it is flattened in to a 1D integer array and a list of rules
  * based on the shape.
  * @author Benjamin Levandowski
  */
@@ -31,6 +31,9 @@ public final class Tableau {
         }
         boolean rectangular = true;
         for(int i = 1; i < SHAPE.length; i++) {
+            if(SHAPE[i] > SHAPE[i - 1])
+                throw new RejectedExecutionException("Row lengths must be in "
+                        + "non-increasing order.  Please use English notation");
             rectangular = rectangular && SHAPE[i - 1] == SHAPE[i];
         }
         RECT = rectangular;
